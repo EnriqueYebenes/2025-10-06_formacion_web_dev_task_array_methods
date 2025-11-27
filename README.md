@@ -1,12 +1,6 @@
 # formacion-web-dev-basic-loops-second-task
 
-Este repositorio ha sido adaptado para contener 200 ejercicios centrados en bucles (loops) de JavaScript:
-
-- for
-- for...in
-- for...of
-- while
-- do...while
+Este repositorio ha sido adaptado para contener 10 ejercicios centrados en metodos de arrays de JavaScript:
 
 Cada ejercicio está implementado en `src/index.js` con nombres y enunciados.
 
