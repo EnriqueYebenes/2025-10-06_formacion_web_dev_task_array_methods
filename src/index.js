@@ -2,22 +2,53 @@
 // Pista: filtra los números válidos (> 0) y luego suma; recuerda ignorar NaN.
 // Nivel: 🟡 Intermedio
 function sumPositive(arr) {
+  let sumPositive = 0
+    arr.forEach(el => {
+        if (el > 0) {
+            sumPositive = sumPositive + el
+        }
+    });
+    return sumPositive
+    }
 
-}
+
 
 // 2) mapToLengths: devuelve las longitudes de los elementos (strings) en un array
 // Pista: convierte cada elemento a un string y luego obtiene su longitud.
 // Nivel: 🟢 Introductorio
 function mapToLengths(arr) {
+  
 
+    
+  const lengths = arr.map(elm => String(elm).length);
+  return lengths
 }
+
+
+
 
 // 3) filterDigits: devuelve sólo los caracteres numéricos de la cadena
 // Pista: recorre cada carácter y conserva solo los que sean dígitos.
 // Nivel: 🟡 Intermedio
-function filterDigits(str) {
-
+function filterDigits(str) { 
+  console.log(str)
+  
+  
+let myString = str
+let myArray = myString.split('');
+let numbers = "";
+  for (let i = 0; i < myArray.length; i++) {
+    if (!isNaN (myArray[i]) && myArray[i] !== "") {
+            numbers += myArray[i];
+        }
+      
+    }
+    return numbers
 }
+ 
+
+
+
 
 // 4) flattenAndFilter: aplana un nivel y elimina elementos falsy
 // Pista: expande un nivel de anidación y después filtra los valores falsy.
@@ -36,7 +67,13 @@ function groupByType(arr) {
 // 6) takeUntilNegative: devuelve elementos desde el inicio hasta el primer negativo (sin incluirlo)
 // Pista: recorre en orden y para cuando encuentres el primer número < 0.
 // Nivel: 🟢 Introductorio
-function takeUntilNegative(arr) {
+function takeUntilNegative(arr) {function takeUntilNegative(arr) {
+    const negativeIndex = arr.findIndex(el => el < 0);
+    if (negativeIndex === -1) {
+        return[...arr];
+    }
+    return arr.slice(0, negativeIndex);
+}
 
 }
 
@@ -51,6 +88,10 @@ function unique(arr) {
 // Pista: toma `Object.values(obj)` y cuenta los elementos que son truthy.
 // Nivel: 🟢 Introductorio
 function countTruthyValues(obj) {
+    const values = Object.values(obj);
+    const valuesTruthy = values.filter(value => value);
+    const counter = valuesTruthy.length;
+    return counter
 
 }
 
