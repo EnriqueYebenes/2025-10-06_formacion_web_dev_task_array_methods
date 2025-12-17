@@ -69,24 +69,17 @@ function groupByType(arr) {
   //*else if(typeof arr==="string"){
   //* grouppedElm=grouppedElm.push(arr)}
   //* return grouppedElm //*
-  let grouppedArr = {
-    function: [],
-    symbol: [],
-    string: [],
-    number: [],
-    object: [],
-    boolean: [],
-  }
-  for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
-    const type = typeof arr[i]
-    if (type === 'number') {
-      grouppedArr.number.push(type)
+  let grouppedArr = {}
+  for (const element of arr) {
+    const type = typeof element;
 
+    if (grouppedArr[type] === 'number') {
+      grouppedArr[type] = [];
     }
-    return grouppedArr
+    grouppedArr[type].push(element)
 
   }
+  return grouppedArr
 }
 
 
@@ -96,20 +89,19 @@ function groupByType(arr) {
 // Pista: recorre en orden y para cuando encuentres el primer número < 0.
 // Nivel: 🟢 Introductorio
 function takeUntilNegative(arr) {
-  function takeUntilNegative(arr) {
-    const negativeIndex = arr.findIndex(el => el < 0);
-    if (negativeIndex === -1) {
-      return [...arr];
-    }
-    return arr.slice(0, negativeIndex);
+  const negativeIndex = arr.findIndex(el => el < 0);
+  if (negativeIndex <= -1) {
+    return [...arr];
   }
 
 }
+
 
 // 7) unique: devuelve elementos únicos (orden original)
 // Pista: incluye solo la primera aparición de cada valor (comparación ===).
 // Nivel: 🟡 Intermedio
 function unique(arr) {
+
 
 }
 
